@@ -30,7 +30,7 @@ export default function Contact() {
       )
       
       setTimeout(() => {
-        window.open(`https://wa.me/6281916567373?text=${waMessage}`, '_blank')
+        window.open(`${SITE.wa}?text=${waMessage}`, '_blank')
       }, 1000)
     }, 800)
   }
@@ -50,19 +50,30 @@ export default function Contact() {
             Tell us about your business. In 30 minutes we'll show you exactly how AI agents can work for you.
           </p>
           <div className="space-y-3.5">
-            {[
-              { icon: '✉️', text: SITE.email, class: 'c-ic-1 bg-gradient-to-br from-p1/20 to-blue/10' },
-              { icon: '📱', text: SITE.waNumber, class: 'c-ic-2 bg-gradient-to-br from-teal/20 to-blue/10' },
-              { icon: '🌐', text: 'konten.ai', class: 'c-ic-3 bg-gradient-to-br from-blue/20 to-p1/10' },
-              { icon: '📍', text: SITE.location, class: 'c-ic-4 bg-gradient-to-br from-[#FFB347]/20 to-rose/10' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3.5">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-[17px] flex-shrink-0 ${item.class}`}>
-                  {item.icon}
-                </div>
-                <span className="text-[14px] font-semibold text-ink2">{item.text}</span>
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[17px] flex-shrink-0 c-ic-2 bg-gradient-to-br from-teal/20 to-blue/10">
+                📱
               </div>
-            ))}
+              <span className="text-[14px] font-semibold text-ink2">Trisna: +62 823-4272-0379</span>
+            </div>
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[17px] flex-shrink-0 c-ic-1 bg-gradient-to-br from-p1/20 to-blue/10">
+                📱
+              </div>
+              <span className="text-[14px] font-semibold text-ink2">Nia: +62 877-4503-2833</span>
+            </div>
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[17px] flex-shrink-0 c-ic-3 bg-gradient-to-br from-blue/20 to-p1/10">
+                🌐
+              </div>
+              <span className="text-[14px] font-semibold text-ink2">konten.ai</span>
+            </div>
+            <div className="flex items-center gap-3.5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-[17px] flex-shrink-0 c-ic-4 bg-gradient-to-br from-[#FFB347]/20 to-rose/10">
+                📍
+              </div>
+              <span className="text-[14px] font-semibold text-ink2">{SITE.location}</span>
+            </div>
           </div>
         </div>
 

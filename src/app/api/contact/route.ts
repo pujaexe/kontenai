@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { SITE } from '@/lib/constants'
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,7 +14,7 @@ export async function POST(req: NextRequest) {
     
     return NextResponse.json({ 
       success: true, 
-      waUrl: `https://wa.me/6281916567373?text=${waMessage}` 
+      waUrl: `${SITE.wa}?text=${waMessage}` 
     })
   } catch (error) {
     return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 })

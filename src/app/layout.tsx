@@ -80,8 +80,7 @@ const jsonLd = {
       url: 'https://konten.ai',
       description: 'Done-for-you AI content agency based in Gianyar, Bali.',
       foundingDate: '2025',
-      email: 'puja.exe@gmail.com',
-      telephone: '+6281916567373',
+      telephone: '+6282342720379',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Gianyar',
@@ -94,8 +93,7 @@ const jsonLd = {
       name: 'Konten.ai',
       image: 'https://konten.ai/og-image.jpg',
       url: 'https://konten.ai',
-      telephone: '+6281916567373',
-      email: 'puja.exe@gmail.com',
+      telephone: '+6282342720379',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Gianyar',
@@ -136,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="preconnect" href="https://wa.me" />
-        <link rel="prefetch" href="https://wa.me/6281916567373" />
+        <link rel="prefetch" href="https://wa.me/6282342720379" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <meta name="theme-color" content="#6B72FF" />
       </head>

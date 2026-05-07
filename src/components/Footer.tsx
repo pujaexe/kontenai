@@ -32,7 +32,7 @@ export default function Footer() {
         Our services include AI-driven content research, trend monitoring, automated caption and hashtag generation, and scheduling across Instagram, TikTok, and Facebook. 
         We also provide lead generation automation by routing DM inquiries directly to WhatsApp. 
         Pricing starts from Rp 500,000 per month with no setup fee. 
-        Contact us at {SITE.email} or WhatsApp at {SITE.waNumber}.
+        Contact us via WhatsApp at {SITE.waNumber}.
       </div>
     </footer>
   )

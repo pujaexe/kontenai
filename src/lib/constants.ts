@@ -2,11 +2,15 @@ export const SITE = {
   name: 'Konten.ai',
   tagline: 'AI Content Agency Bali',
   url: 'https://konten.ai',
-  wa: 'https://wa.me/6281916567373',
-  waNumber: '+62 819-1656-7373',
-  email: 'puja.exe@gmail.com',
+  wa: 'https://wa.me/6282342720379',
+  waNumber: '+62 823-4272-0379',
   location: 'Gianyar, Bali — serving all of Indonesia',
 }
+
+export const CONTACTS = [
+  { name: 'Trisna', number: '+62 823-4272-0379', wa: 'https://wa.me/6282342720379' },
+  { name: 'Nia', number: '+62 877-4503-2833', wa: 'https://wa.me/6287745032833' },
+]
 
 export const BADGE_TEXTS = [
   'AI Content Agency',
