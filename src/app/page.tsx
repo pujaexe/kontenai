@@ -1,6 +1,5 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Stars from '@/components/Stars'
 import Marquee from '@/components/Marquee'
 import HowItWorks from '@/components/HowItWorks'
 import Services from '@/components/Services'
@@ -12,8 +11,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
-      <Stars />
+    <main className="relative min-h-screen bg-slate-50 overflow-hidden">
       <Nav />
       <Hero />
       <Marquee />

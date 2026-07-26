@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const font = Plus_Jakarta_Sans({
+const font = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-jakarta',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
@@ -124,9 +122,11 @@ const jsonLd = {
   ],
 }
 
+import { Toaster } from "@/components/ui/sonner"
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={font.variable}>
+    <html lang="en" className={font.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -135,10 +135,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="preconnect" href="https://wa.me" />
         <link rel="prefetch" href="https://wa.me/6282342720379" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <meta name="theme-color" content="#6B72FF" />
       </head>
-      <body>{children}</body>
+      <body className="antialiased font-normal">
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }

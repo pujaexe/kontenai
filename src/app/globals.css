@@ -4,7 +4,7 @@
 
 :root {
   --bg: #dfe6f5;
-  --p1: #6B72FF;
+  --p1: #555DFF;
   --p2: #9B8FFF;
   --p3: #C4BDFF;
   --blue: #5BAEFF;
@@ -12,7 +12,7 @@
   --rose: #FF7EB3;
   --ink: #0C0B1A;
   --ink2: #2D2B4E;
-  --muted: #7B8AAB;
+  --muted: #5A6987;
   --r: 20px;
   --r-sm: 12px;
   --r-lg: 28px;
@@ -27,6 +27,10 @@ body {
     radial-gradient(ellipse 700px 600px at 90% 10%, rgba(91,174,255,0.18) 0%, transparent 60%),
     radial-gradient(ellipse 600px 500px at 50% 100%, rgba(255,126,179,0.1) 0%, transparent 60%);
   background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: "Google Sans", sans-serif;
 }
 
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
@@ -238,7 +242,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "a a b" "c d d";
-  gap: 20px;
+  gap: 0;
 }
 .how-bento .hb-a { grid-area: a; }
 .how-bento .hb-b { grid-area: b; }
