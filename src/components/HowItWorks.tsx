@@ -11,87 +11,41 @@ const STEP_ICONS = [Search, TrendingUp, KanbanSquare, Rocket]
 
 function ResearchIllustration() {
   return (
-    <div className="relative w-full h-full min-h-[150px] flex items-center justify-center overflow-hidden">
-      <svg viewBox="0 0 200 120" width="100%" height="110" className="block" aria-hidden="true">
-        <defs>
-          <linearGradient id="radarSweepGrad" x1="1" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor="#6B72FF" stopOpacity="0.45" />
-            <stop offset="50%" stopColor="#6B72FF" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="#6B72FF" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
-        {/* Outer hud box */}
-        <rect x="5" y="5" width="190" height="110" rx="6" fill="none" stroke="rgba(107,114,255,0.06)" strokeWidth="1" />
-
-        {/* Dashboard Grid Lines (Techy background) */}
-        <line x1="100" y1="6" x2="100" y2="114" stroke="rgba(107,114,255,0.1)" strokeDasharray="2 2" />
-        <line x1="46" y1="60" x2="154" y2="60" stroke="rgba(107,114,255,0.1)" strokeDasharray="2 2" />
-        <line x1="62" y1="22" x2="138" y2="98" stroke="rgba(107,114,255,0.04)" strokeDasharray="2 2" />
-        <line x1="62" y1="98" x2="138" y2="22" stroke="rgba(107,114,255,0.04)" strokeDasharray="2 2" />
-
-        {/* Concentric rings */}
-        <circle cx="100" cy="60" r="18" fill="none" stroke="rgba(107,114,255,0.08)" strokeDasharray="3 3" />
-        <circle cx="100" cy="60" r="36" fill="none" stroke="rgba(107,114,255,0.14)" />
-        <circle cx="100" cy="60" r="54" fill="none" stroke="rgba(107,114,255,0.18)" />
-        <circle cx="100" cy="60" r="54" fill="none" stroke="rgba(107,114,255,0.22)" strokeDasharray="8 4" />
-
-        {/* Rotating sweep beam */}
-        <g style={{ transformOrigin: '100px 60px', animation: 'radarSweep 4s linear infinite' }}>
-          {/* Pie slice representing the trailing edge */}
-          <path d="M 100 60 L 154 60 A 54 54 0 0 0 138.18 21.82 Z" fill="url(#radarSweepGrad)" />
-          {/* Active sweeping laser line */}
-          <line x1="100" y1="60" x2="154" y2="60" stroke="#6B72FF" strokeWidth="1.2" strokeLinecap="round" />
-        </g>
-
-        {/* Center hub */}
-        <circle cx="100" cy="60" r="4" fill="#6B72FF" />
-        <circle cx="100" cy="60" r="8" fill="none" stroke="#6B72FF" strokeWidth="0.8" opacity="0.4" />
-
-        {/* Sync'ed Blip 1: Web Site (Audience) */}
-        <g transform="translate(55, 45)">
-          <circle r="9" fill="none" stroke="#6B72FF" strokeWidth="0.8" className="animate-[radarTargetRing_4s_ease-out_infinite]" style={{ animationDelay: '2.20s', transformOrigin: 'center' }} />
-          <g className="animate-[radarTargetPulse_4s_ease-in-out_infinite]" style={{ animationDelay: '2.20s', transformOrigin: 'center' }}>
-            <circle r="6" fill="rgba(107,114,255,0.18)" />
-            {/* Tiny Globe Icon */}
-            <circle r="3.2" fill="none" stroke="#6B72FF" strokeWidth="0.6" />
-            <ellipse rx="3.2" ry="1.2" fill="none" stroke="#6B72FF" strokeWidth="0.5" />
-            <line x1="-3.2" y1="0" x2="3.2" y2="0" stroke="#6B72FF" strokeWidth="0.5" />
-          </g>
-          <text x="8" y="2.5" fill="#7B8AAB" fontSize="4.5" fontFamily="monospace" opacity="0.75" fontWeight="bold">AUDIENCE.DB</text>
-        </g>
-
-        {/* Sync'ed Blip 2: Competitor Pin */}
-        <g transform="translate(145, 80)">
-          <circle r="9" fill="none" stroke="#5BAEFF" strokeWidth="0.8" className="animate-[radarTargetRing_4s_ease-out_infinite]" style={{ animationDelay: '0.27s', transformOrigin: 'center' }} />
-          <g className="animate-[radarTargetPulse_4s_ease-in-out_infinite]" style={{ animationDelay: '0.27s', transformOrigin: 'center' }}>
-            <circle r="6" fill="rgba(91,174,255,0.18)" />
-            {/* Tiny MapPin Icon */}
-            <path d="M 0 -3 A 1.8 1.8 0 0 1 1.8 -1.2 C 1.8 -0.3 0 1.8 0 1.8 C 0 1.8 -1.8 -0.3 -1.8 -1.2 A 1.8 1.8 0 0 1 0 -3 Z" fill="none" stroke="#5BAEFF" strokeWidth="0.8" strokeLinejoin="round" />
-            <circle cx="0" cy="-1.2" r="0.5" fill="#5BAEFF" />
-          </g>
-          <text x="8" y="2.5" fill="#7B8AAB" fontSize="4.5" fontFamily="monospace" opacity="0.75" fontWeight="bold">COMPETITOR.LOC</text>
-        </g>
-
-        {/* Sync'ed Blip 3: Keyword/Trending */}
-        <g transform="translate(138, 30)">
-          <circle r="9" fill="none" stroke="#54E5D4" strokeWidth="0.8" className="animate-[radarTargetRing_4s_ease-out_infinite]" style={{ animationDelay: '3.57s', transformOrigin: 'center' }} />
-          <g className="animate-[radarTargetPulse_4s_ease-in-out_infinite]" style={{ animationDelay: '3.57s', transformOrigin: 'center' }}>
-            <circle r="6" fill="rgba(84,229,212,0.18)" />
-            {/* Tiny Trending Arrow */}
-            <path d="M -2 1 L -0.5 -0.5 L 0.8 0.8 L 2.2 -1 M 1.2 -1 L 2.2 -1 L 2.2 0" fill="none" stroke="#54E5D4" strokeWidth="0.7" strokeLinecap="round" strokeLinejoin="round" />
-          </g>
-          <text x="-34" y="2.5" fill="#7B8AAB" fontSize="4.5" fontFamily="monospace" opacity="0.75" fontWeight="bold">TREND_API</text>
-        </g>
-
-        {/* Corner HUD Data Overlay */}
-        <text x="12" y="16" fill="#6B72FF" fontSize="5.5" fontFamily="monospace" fontWeight="bold" opacity="0.9" className="animate-[radarHUDFlash_2s_infinite]">
-          ● SYSTEM_SCAN: ACTIVE
-        </text>
-        <text x="12" y="24" fill="#7B8AAB" fontSize="5" fontFamily="monospace" opacity="0.6">
-          FREQ: 2.45GHZ | POS: 42.1
-        </text>
-      </svg>
+    <div className="relative w-full h-full min-h-[220px] flex items-center justify-center p-2">
+      <div className="w-full h-full bg-[#0C0B1A] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden font-mono text-[11px] md:text-xs text-slate-300 flex flex-col">
+        {/* Terminal Header */}
+        <div className="flex items-center px-4 py-2 bg-slate-800/50 border-b border-slate-700/50 gap-2">
+          <div className="flex gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-rose/80" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#FFB347]/80" />
+            <div className="w-2.5 h-2.5 rounded-full bg-[#54E5D4]/80" />
+          </div>
+          <div className="ml-auto text-slate-500 text-[10px]">research_agent.sh</div>
+        </div>
+        {/* Terminal Body */}
+        <div className="p-4 flex-1 flex flex-col gap-2">
+          <div className="flex gap-2">
+            <span className="text-p1 font-bold">~</span>
+            <span className="text-blue">./analyze_trends --topic="fashion"</span>
+          </div>
+          <div className="flex gap-2 animate-fade-in [animation-delay:1s] opacity-0 fill-mode-forwards">
+            <span className="text-slate-500">[System]</span>
+            <span>Scanning real-time social APIs...</span>
+          </div>
+          <div className="flex gap-2 animate-fade-in [animation-delay:2s] opacity-0 fill-mode-forwards text-[#54E5D4]">
+            <span>✓ Found 3 high-engagement topics</span>
+          </div>
+          <div className="flex flex-col gap-1 mt-1 animate-fade-in [animation-delay:2.5s] opacity-0 fill-mode-forwards pl-2 border-l-2 border-slate-700">
+            <span className="text-slate-400">1. Minimalist streetwear (+140%)</span>
+            <span className="text-slate-400">2. Sustainable fabrics (+89%)</span>
+            <span className="text-slate-400">3. Y2K accessories (+55%)</span>
+          </div>
+          <div className="flex gap-2 mt-2 animate-fade-in [animation-delay:4s] opacity-0 fill-mode-forwards">
+            <span className="text-p1 font-bold">~</span>
+            <span className="text-slate-500 animate-pulse">_</span>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -242,6 +196,8 @@ function PostingIllustration() {
   )
 }
 
+import { Badge } from '@/components/ui/badge'
+
 const ILLUSTRATIONS = [ResearchIllustration, TrendIllustration, ContentIllustration, PostingIllustration]
 const AREAS = ['hb-a', 'hb-b', 'hb-c', 'hb-d']
 
@@ -249,42 +205,66 @@ export default function HowItWorks() {
   const revealRef = useReveal()
 
   return (
-    <section id="how" className="py-[80px] px-6 md:px-[56px] relative z-10 text-center">
-      <div className="max-w-[1024px] mx-auto">
-        <div className="inline-flex items-center gap-1.5 bg-p1/10 border border-p1/20 text-p1 text-[11px] font-bold tracking-[0.08em] uppercase py-1.5 px-3.5 rounded-full mb-3.5">
-          <div className="w-[5px] h-[5px] bg-p1 rounded-full" />
-          How It Works
+    <section id="how" className="py-24 px-6 md:px-14 relative z-10 text-center">
+      <div className="max-w-[1080px] mx-auto text-left">
+        <div className="flex flex-col items-start mb-12">
+          <Badge variant="outline" className="bg-p1/10 text-p1 border-p1/20 uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+            <div className="w-1.5 h-1.5 bg-p1 rounded-full mr-2" />
+            How It Works
+          </Badge>
+          <h2 className="text-4xl md:text-[56px] font-extrabold leading-[1.05] tracking-tight text-ink mb-6">A system that works<br /><span className="text-p1">while you sleep</span></h2>
+          <p className="text-[18px] text-muted max-w-[500px] leading-relaxed">
+            Four AI agents working in sequence, fully automated, so you can focus on running your business.
+          </p>
         </div>
-        <h2 className="text-[clamp(28px,3.5vw,50px)] font-extrabold leading-[1.1] tracking-[-0.025em] text-ink mb-3">A system that works<br /><span className="grad-text">while you sleep</span></h2>
-        <p className="text-[16px] text-muted max-w-[500px] mx-auto mb-[52px] leading-[1.8]">
-          Four AI agents working in sequence, fully automated, so you can focus on running your business.
-        </p>
 
-        <div ref={revealRef} className="reveal how-bento">
-          {HOW_STEPS.map((step, i) => {
-            const Illustration = ILLUSTRATIONS[i]
-            const StepIcon = STEP_ICONS[i]
-            return (
-              <div key={i} className={`${AREAS[i]} g-card rounded-card-lg p-7 flex flex-col text-left transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_20px_56px_rgba(107,114,255,0.14),0_1px_0_rgba(255,255,255,0.8)_inset]`}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-9 h-9 rounded-[10px] flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${
-                    i === 0 ? 'from-p1/20 to-p1/10 text-p1' :
-                    i === 1 ? 'from-blue/20 to-blue/10 text-blue' :
-                    i === 2 ? 'from-teal/20 to-teal/10 text-[#2FB3A3]' :
-                    'from-[#FFB347]/20 to-rose/10 text-rose'
-                  }`}>
-                    <StepIcon size={18} strokeWidth={2.2} />
+        <div className="relative mt-8">
+          {/* Glowing Orbs behind the grid */}
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+            <div className="absolute -top-[10%] -left-[10%] w-[500px] h-[500px] bg-p1/20 rounded-full blur-[120px] mix-blend-multiply animate-blob" />
+            <div className="absolute top-[40%] -right-[10%] w-[600px] h-[600px] bg-[#54E5D4]/20 rounded-full blur-[120px] mix-blend-multiply animate-blob animation-delay-2000" />
+            <div className="absolute -bottom-[10%] left-[20%] w-[600px] h-[600px] bg-rose/15 rounded-full blur-[120px] mix-blend-multiply animate-blob animation-delay-4000" />
+          </div>
+
+          <div ref={revealRef} className="reveal how-bento bg-white/80 backdrop-blur-xl rounded-[40px] shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] ring-1 ring-slate-900/5 overflow-hidden relative">
+            {HOW_STEPS.map((step, i) => {
+              const Illustration = ILLUSTRATIONS[i]
+              const StepIcon = STEP_ICONS[i]
+              
+              // Generate different gradient themes per step
+              const theme = i === 0 
+                ? { icon: 'from-p1/20 to-p1/10 text-p1', backdrop: 'from-p1 to-blue/40', box: 'from-p1/10 to-blue/5' }
+                : i === 1 
+                ? { icon: 'from-blue/20 to-blue/10 text-blue', backdrop: 'from-blue to-teal/40', box: 'from-blue/10 to-teal/5' }
+                : i === 2 
+                ? { icon: 'from-teal/20 to-teal/10 text-[#2FB3A3]', backdrop: 'from-teal to-p1/40', box: 'from-teal/10 to-p1/5' }
+                : { icon: 'from-[#FFB347]/20 to-rose/10 text-rose', backdrop: 'from-[#FFB347] to-rose/40', box: 'from-[#FFB347]/10 to-rose/5' }
+
+              let borderClasses = 'border-b border-slate-100/50 last:border-b-0'
+              if (i === 0) borderClasses += ' md:border-r md:border-b'
+              if (i === 1) borderClasses += ' md:border-b'
+              if (i === 2) borderClasses += ' md:border-r md:border-b-0'
+              if (i === 3) borderClasses += ' md:border-b-0'
+
+              return (
+                <div key={i} className={`${AREAS[i]} p-8 md:p-12 text-left flex flex-col ${borderClasses} bg-white/60 hover:bg-white transition-colors duration-500`}>
+                  <div className="flex flex-col mb-6">
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 mb-6 bg-gradient-to-br ${theme.icon}`}>
+                      <StepIcon size={22} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-[22px] font-extrabold text-ink mb-3">{step.title}</h3>
+                    <p className="text-[15px] text-muted leading-relaxed max-w-[90%]">{step.desc}</p>
                   </div>
-                  <h3 className="text-[18px] font-bold text-ink">{step.title}</h3>
-                </div>
-                <p className="text-[13px] text-muted leading-[1.65] mb-5">{step.desc}</p>
 
-                <div className="mt-auto rounded-2xl bg-white/40 border border-white/60 flex-1 p-2.5">
-                  <Illustration />
+                  <div className="mt-auto relative rounded-[24px] p-4 bg-gradient-to-br from-slate-50 to-slate-100/50 ring-1 ring-slate-900/5 flex-1 flex items-center justify-center min-h-[220px] overflow-hidden">
+                    <div className="w-full relative z-10">
+                      <Illustration />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
       </div>
     </section>
