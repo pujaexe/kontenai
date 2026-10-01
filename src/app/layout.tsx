@@ -11,11 +11,11 @@ const font = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://konten.ai'),
   title: {
-    default: 'Konten.ai | AI Content Agency Bali | Social Media Autopilot for Brands & SMEs',
+    default: 'Konten.ai | Platform AI untuk Produksi Konten Otomatis',
     template: '%s | Konten.ai',
   },
-  description: 'Konten.ai is a done-for-you AI content agency based in Gianyar, Bali. We set up and manage AI agents that auto-generate, schedule, and post content for retail, cafes, startups, hotels, and SMEs, starting from Rp 500K/month. No setup fee.',
-  keywords: ['AI content agency Bali', 'social media management Bali', 'AI content for business', 'SME content marketing', 'konten AI Indonesia', 'otomatisasi konten', 'lead generation AI', 'posting otomatis instagram tiktok', 'UMKM digital Bali', 'content agent AI', 'retail social media automation'],
+  description: 'Riset pasar, bangun brand guideline, temukan ide, produksi, jadwalkan, dan publikasikan konten ke semua platform dengan 6 AI agents dalam satu alur.',
+  keywords: ['platform AI konten', 'AI content generator Indonesia', 'otomatisasi konten', 'social media automation', 'jadwal konten otomatis', 'AI agents', 'produksi konten AI', 'konten.ai'],
   authors: [{ name: 'Konten.ai', url: 'https://konten.ai' }],
   creator: 'Konten.ai',
   publisher: 'Konten.ai',
@@ -26,24 +26,21 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://konten.ai',
-    languages: { 'en-US': 'https://konten.ai', 'id-ID': 'https://konten.ai/id' },
   },
   openGraph: {
     type: 'website',
     url: 'https://konten.ai',
     siteName: 'Konten.ai',
-    title: 'Konten.ai | AI Content Agency Bali | Social Media on Autopilot',
-    description: 'We set up and manage AI agents that generate, schedule, and post content for your business, shop, or startup, automatically, every day. From Rp 500K/month. No setup fee.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Konten.ai: AI Content Agency for Brands, Startups and SMEs' }],
-    locale: 'en_US',
+    title: 'Konten.ai | Dari Riset sampai Posting, Otomatis dengan AI',
+    description: 'Satu platform dengan 6 AI agents untuk riset, strategi, produksi, penjadwalan, dan publikasi konten.',
+    images: [{ url: 'https://konten.ai/og-image.png', width: 1200, height: 630, alt: 'Konten.ai — platform AI untuk produksi konten otomatis' }],
+    locale: 'id_ID',
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@kontenai',
-    creator: '@kontenai',
-    title: 'Konten.ai | AI Content Agency Bali',
-    description: 'AI agents that generate, schedule & post content for your business, shop, or startup. From Rp 500K/month.',
-    images: [{ url: '/og-image.jpg', alt: 'Konten.ai AI Content Agency Bali' }],
+    title: 'Konten.ai | Dari Riset sampai Posting, Otomatis dengan AI',
+    description: '6 AI agents untuk riset, strategi, produksi, penjadwalan, dan publikasi konten.',
+    images: [{ url: 'https://konten.ai/og-image.png', alt: 'Konten.ai — platform AI untuk produksi konten otomatis' }],
   },
   other: {
     'geo.region': 'ID-BA',
@@ -58,12 +55,10 @@ export const metadata: Metadata = {
     'CCBot': 'index, follow',
     'Applebot': 'index, follow',
     // AI context hints
-    'ai-content-type': 'service, agency, pricing',
-    'ai-primary-language': 'en, id',
-    'ai-service-category': 'AI Content Agency, Social Media Management, Marketing Automation',
-    'ai-location': 'Gianyar, Bali, Indonesia',
-    'ai-price-range': 'Rp 500000 - Rp 4000000 IDR per month',
-    'ai-target-audience': 'SME owners, Retail shop managers, Cafe owners, Startup founders, Hotel operators, local business owners',
+    'ai-content-type': 'software, content automation platform',
+    'ai-primary-language': 'id',
+    'ai-service-category': 'AI Content Platform, Social Media Automation, Content Production',
+    'ai-target-audience': 'Kreator, bisnis, agensi, UMKM, dan tim pemasaran',
   },
 }
 
@@ -76,48 +71,19 @@ const jsonLd = {
       '@id': 'https://konten.ai/#organization',
       name: 'Konten.ai',
       url: 'https://konten.ai',
-      description: 'Done-for-you AI content agency based in Gianyar, Bali.',
+      description: 'Platform AI all-in-one untuk riset, strategi, produksi, penjadwalan, dan publikasi konten.',
       foundingDate: '2025',
-      telephone: '+6282342720379',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Gianyar',
-        addressRegion: 'Bali',
-        addressCountry: 'ID',
-      },
     },
     {
-      '@type': 'LocalBusiness',
+      '@type': 'SoftwareApplication',
       name: 'Konten.ai',
-      image: 'https://konten.ai/og-image.jpg',
+      image: 'https://konten.ai/og-image.png',
       url: 'https://konten.ai',
-      telephone: '+6282342720379',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Gianyar',
-        addressRegion: 'Bali',
-        postalCode: '80511',
-        addressCountry: 'ID',
-      },
-      geo: { '@type': 'GeoCoordinates', latitude: -8.5069, longitude: 115.3624 },
-      priceRange: 'Rp 500K – Rp 4M/month',
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'AI Content Services',
-        itemListElement: [
-          { '@type': 'Offer', name: 'Starter Plan', price: '500000', priceCurrency: 'IDR' },
-          { '@type': 'Offer', name: 'Growth Engine Plan', price: '2000000', priceCurrency: 'IDR' },
-          { '@type': 'Offer', name: 'Full Agency Plan', price: '4000000', priceCurrency: 'IDR' },
-        ],
-      },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        { '@type': 'Question', name: 'How does Konten.ai work?', acceptedAnswer: { '@type': 'Answer', text: 'We set up 4 AI agents: Research, Trend, Content, and Posting. They work together to create and publish content daily.' } },
-        { '@type': 'Question', name: 'How much does it cost?', acceptedAnswer: { '@type': 'Answer', text: 'Plans start from Rp 500K/month. No setup fee.' } },
-        { '@type': 'Question', name: 'Is there a setup fee?', acceptedAnswer: { '@type': 'Answer', text: 'No. Zero setup fee on all plans.' } },
-      ],
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      inLanguage: 'id-ID',
+      description: 'Enam AI agents terintegrasi untuk riset pasar, brand guideline, topik, produksi, kalender, dan publikasi konten.',
+      featureList: ['Riset pasar dengan AI', 'Brand guideline otomatis', 'Ide dan topik konten', 'Produksi konten AI', 'Kalender konten', 'Publikasi ke berbagai platform'],
     },
   ],
 }
@@ -126,7 +92,7 @@ import { Toaster } from "@/components/ui/sonner"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={font.variable} suppressHydrationWarning>
+    <html lang="id" className={font.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -137,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="prefetch" href="https://wa.me/6282342720379" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <meta name="theme-color" content="#6B72FF" />
       </head>
