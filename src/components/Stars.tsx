@@ -1,16 +1,11 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Stars() {
-  const [mounted, setMounted] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    if (!mounted || !ref.current) return
+    if (!ref.current) return
     
     // Clear existing stars if any
     ref.current.innerHTML = ''
@@ -26,11 +21,7 @@ export default function Stars() {
       `
       ref.current.appendChild(s)
     }
-  }, [mounted])
-
-  if (!mounted) {
-    return <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" />
-  }
+  }, [])
 
   return <div ref={ref} className="fixed inset-0 pointer-events-none z-0 overflow-hidden" />
 }

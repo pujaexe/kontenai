@@ -12,7 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { toast } from "sonner";
 import { Rocket, AlertTriangle, CheckCircle } from "lucide-react";
@@ -36,16 +36,16 @@ export default function DesignSystemPage() {
         <section>
           <h2 className="text-2xl font-bold border-b border-slate-200 pb-2 mb-8">1. Color Palette</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <ColorSwatch name="Primary (p1)" hex="#6B72FF" bgClass="bg-p1" textClass="text-white" />
-            <ColorSwatch name="Primary Light (p2)" hex="#9B8FFF" bgClass="bg-p2" textClass="text-ink" />
-            <ColorSwatch name="Primary Lighter (p3)" hex="#C4BDFF" bgClass="bg-p3" textClass="text-ink" />
+            <ColorSwatch name="Primary (p1)" hex="#6B72FF" bgClass="bg-p1" />
+            <ColorSwatch name="Primary Light (p2)" hex="#9B8FFF" bgClass="bg-p2" />
+            <ColorSwatch name="Primary Lighter (p3)" hex="#C4BDFF" bgClass="bg-p3" />
             
-            <ColorSwatch name="Blue Accent" hex="#5BAEFF" bgClass="bg-blue" textClass="text-white" />
-            <ColorSwatch name="Teal Accent" hex="#54E5D4" bgClass="bg-teal" textClass="text-ink" />
-            <ColorSwatch name="Rose Accent" hex="#FF7EB3" bgClass="bg-rose" textClass="text-white" />
+            <ColorSwatch name="Blue Accent" hex="#5BAEFF" bgClass="bg-blue" />
+            <ColorSwatch name="Teal Accent" hex="#54E5D4" bgClass="bg-teal" />
+            <ColorSwatch name="Rose Accent" hex="#FF7EB3" bgClass="bg-rose" />
             
-            <ColorSwatch name="Ink (Dark Text)" hex="#0C0B1A" bgClass="bg-ink" textClass="text-white" />
-            <ColorSwatch name="Muted (Text)" hex="#7B8AAB" bgClass="bg-[#7B8AAB]" textClass="text-white" />
+            <ColorSwatch name="Ink (Dark Text)" hex="#0C0B1A" bgClass="bg-ink" />
+            <ColorSwatch name="Muted (Text)" hex="#7B8AAB" bgClass="bg-[#7B8AAB]" />
           </div>
         </section>
 
@@ -562,7 +562,7 @@ export default function DesignSystemPage() {
   );
 }
 
-function ColorSwatch({ name, hex, bgClass, textClass }: { name: string, hex: string, bgClass: string, textClass: string }) {
+function ColorSwatch({ name, hex, bgClass }: { name: string, hex: string, bgClass: string }) {
   return (
     <div className="group rounded-2xl overflow-hidden ring-1 ring-slate-900/5 bg-white shadow-sm hover:shadow-md transition-shadow">
       <div className={`h-24 w-full ${bgClass}`}></div>

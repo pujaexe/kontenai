@@ -1,5 +1,5 @@
 'use client'
-import { Search, TrendingUp, KanbanSquare, Rocket, MapPin, Globe, Image as ImageIcon, Video, Smartphone } from 'lucide-react'
+import { Search, TrendingUp, KanbanSquare, Rocket } from 'lucide-react'
 import { HOW_STEPS } from '@/lib/constants'
 import { useReveal } from '@/hooks/useReveal'
 import KanbanAnimation from './KanbanAnimation'

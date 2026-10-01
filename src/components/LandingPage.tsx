@@ -29,7 +29,6 @@ const testimonials = [
 ]
 
 function Logo() { return <Image src="/assets/logo-kontenai.png" alt="konten.ai" width={296} height={77} className="brand-logo" priority /> }
-function Sparkle({ className = '' }: { className?: string }) { return <span className={`sparkle ${className}`} aria-hidden="true"><span /></span> }
 function Eyebrow({ children }: { children: React.ReactNode }) { return <div className="eyebrow">{children}</div> }
 function PrimaryButton({ children = 'Mulai Gratis', href = 'https://app.konten.ai' }: { children?: React.ReactNode; href?: string }) { return <a className="btn btn-primary-new" href={href}>{children}<ArrowRight size={17} /></a> }
 

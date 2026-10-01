@@ -1,5 +1,4 @@
 'use client'
-import { useEffect, useState } from 'react'
 
 /* ── Brand SVG icons ─────────────────────────────── */
 const IgIcon = () => (
@@ -56,10 +55,6 @@ const FLOATING_ICONS = [
 ] as const
 
 export default function HeroAnimation() {
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-  if (!mounted) return <div style={{ width: 340, height: 480 }} />
-
   return (
     <div className="relative select-none pointer-events-none" style={{ width: 340, height: 480 }} aria-hidden="true">
 

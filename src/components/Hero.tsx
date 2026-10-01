@@ -1,11 +1,10 @@
 'use client'
-import { Clock, RefreshCw } from 'lucide-react'
+import { Clock } from 'lucide-react'
 import { SITE, BADGE_TEXTS } from '@/lib/constants'
 import { useReveal } from '@/hooks/useReveal'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import HeroAnimation from './HeroAnimation'
-import KanbanAnimation from './KanbanAnimation'
 import ChartAnimation from './ChartAnimation'
 
 export default function Hero() {
